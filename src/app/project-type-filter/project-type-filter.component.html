@@ -1,0 +1,17 @@
+<form [formGroup]="form" (submit)="submit(form.value)">
+    <div uk-grid class="uk-child-width-1-1">
+        <label>
+            <input class="uk-checkbox" type="checkbox" [formControlName]="'Desktop'" />
+            Desktop
+        </label>
+        <label>
+            <input class="uk-checkbox" type="checkbox" [formControlName]="'Mobile'" />
+            Mobile
+        </label>
+        <label>
+            <input class="uk-checkbox" type="checkbox" [formControlName]="'Design'" />
+            Design
+        </label>
+    </div>
+    <button class="uk-button uk-button-link uk-button-large uk-align-right uk-margin-small">Apply</button>
+</form>
