@@ -8,15 +8,17 @@ import { BehaviorSubject, map } from 'rxjs';
 })
 export class DataService {
 
+  // Observable object with json data
   projects$ = new BehaviorSubject([]);
 
   constructor(private httpClient: HttpClient) { }
 
+  // Loads projects
   loadProjects(projectTypeFilters) {
     this.projects$.next([]);
     this.httpClient.get<any[]>('assets/projects.json').pipe(
       delay(2000),
-      // Filter projects on the client side
+      // Filter projects on the client side with selected filter
       map(projects => {
         if (!projectTypeFilters.length) {
           return projects;
